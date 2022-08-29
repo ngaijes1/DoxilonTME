@@ -1,0 +1,12 @@
+setBatchMode(true);
+ 
+input = "Z:/Jess - Misc/ForBenK_TCPImages/Histology/JN07-50a_4Panels_TCP/N21-176 Jessica Panel 4 Ly6G/";
+
+list = getFileList(input);
+for (i = 0; i < list.length; i++){
+    path = input + list[i];
+	t = list[i];
+    t = replace(t,".vsi","");
+    run("Viewer", "open=[path] group1_level3");
+    saveAs("Tiff", "Z:/Jess - Misc/ForBenK_TCPImages/Histology/JN07-50a_4Panels_TCP/Converted Files/Ly6G/" + t + ".tiff");
+}
